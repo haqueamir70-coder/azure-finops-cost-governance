@@ -3,8 +3,8 @@
 subscription_id         = "00000000-0000-0000-0000-000000000000"
 budget_name             = "finops-monthly-budget"
 budget_amount           = 1000
-budget_start_date       = "2026-10-01T00:00:00Z"
-budget_end_date         = "2027-10-01T00:00:00Z"
+budget_start_date       = "2026-11-01T00:00:00Z"
+budget_end_date         = "2027-11-01T00:00:00Z"
 notification_email      = "cloud-ops@example.com"
 threshold_percentages   = [50, 80, 100]
 
