@@ -36,7 +36,8 @@ Cloud costs become difficult to govern when teams cannot consistently answer fou
 
 *The diagram separates Azure cost-data sources and governance controls from the analytics/reporting pipeline. The included Python analyzer works offline against a sample export; a live Cost Management API integration is an extension point, not something silently assumed to be configured.*
 
-**Architecture source:** [Open SVG diagram](docs/architecture.svg) · [Edit in diagrams.net](https://app.diagrams.net/) using [docs/azure-finops.drawio](docs/azure-finops.drawio) · [Architecture notes](docs/architecture.md)
+**Architecture source:** [Open SVG diagram](docs/architecture.svg) · [Edit in diagrams.net](https://app.diagrams.net/) using [docs/azure-finops.drawio](docs/azure-finops.drawio)
+- **Detailed Azure component map:** [docs/azure-finops-components-map.drawio](docs/azure-finops-components-map.drawio) — component-by-component data flow, governance, identity, CI, and optimization loop. · [Architecture notes](docs/architecture.md)
 
 ## Senior interview preparation
 
