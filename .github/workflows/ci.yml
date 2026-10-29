@@ -1,0 +1,70 @@
+name: FinOps CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: finops-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-tests:
+    name: Python tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Generate sample report
+        run: |
+          python scripts/finops_analyzer.py \
+            --input examples/cost-data.sample.json \
+            --budget 1000 \
+            --threshold 80 \
+            --markdown-out /tmp/sample-report.md \
+            --json-out /tmp/sample-report.json
+      - name: Upload generated demo report
+        uses: actions/upload-artifact@v4
+        with:
+          name: finops-demo-report
+          path: |
+            /tmp/sample-report.md
+            /tmp/sample-report.json
+          if-no-files-found: error
+
+  terraform-checks:
+    name: Terraform format and validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+      - name: Terraform format
+        working-directory: infra/terraform
+        run: terraform fmt -check -recursive
+      - name: Terraform init
+        working-directory: infra/terraform
+        run: terraform init -backend=false
+      - name: Terraform validate
+        working-directory: infra/terraform
+        run: terraform validate
+      - name: Checkov IaC scan
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: infra/terraform
+          framework: terraform
+          soft_fail: false
