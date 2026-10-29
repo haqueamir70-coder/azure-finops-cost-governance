@@ -24,7 +24,8 @@ class FinOpsAnalyzerTests(unittest.TestCase):
         self.assertEqual(result["budget_utilization_pct"], 50.0)
 
     def test_threshold_reached(self):
-        self.assertEqual(analyze(self.records, 100, 80)["status"], "THRESHOLD_REACHED")
+        # 100 spend against a 125 budget is exactly 80%, below the budget cap.
+        self.assertEqual(analyze(self.records, 125, 80)["status"], "THRESHOLD_REACHED")
 
     def test_over_budget(self):
         self.assertEqual(analyze(self.records, 90, 80)["status"], "OVER_BUDGET")
