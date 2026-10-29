@@ -125,12 +125,17 @@ def render_markdown(report: dict[str, Any], currency: str) -> str:
         f"- **Records analyzed:** {report['record_count']}",
         "",
     ]
-    for key, label in (("by_subscription", "Spend by subscription"),
-                       ("by_service", "Spend by service"),
-                       ("by_owner", "Spend by owner")):
+    for key, label in (
+        ("by_subscription", "Spend by subscription"),
+        ("by_service", "Spend by service"),
+        ("by_owner", "Spend by owner"),
+    ):
         lines.extend([f"## {label}", "", "| Name | Cost |", "|---|---:|"])
         if report[key]:
-            lines.extend(f"| {name.replace('|', '\\|')} | {money(cost)} |" for name, cost in report[key].items())
+            lines.extend(
+                "| " + name.replace("|", "\\|") + " | " + money(cost) + " |"
+                for name, cost in report[key].items()
+            )
         else:
             lines.append("| _No data_ | — |")
         lines.append("")
@@ -139,8 +144,11 @@ def render_markdown(report: dict[str, Any], currency: str) -> str:
     candidates = report["optimization_review_candidates"]
     if candidates:
         lines.extend(["| Service | Current cost | Suggested review |", "|---|---:|"])
-        lines.extend(f"| {item['service'].replace('|', '\\|')} | {money(item['cost'])} | {item['reason']} |"
-                      for item in candidates)
+        lines.extend(
+            "| " + item["service"].replace("|", "\\|") + " | "
+            + money(item["cost"]) + " | " + item["reason"] + " |"
+            for item in candidates
+        )
     else:
         lines.append("No service crossed the 30% spend-share heuristic in this dataset.")
     lines.extend(["", "## Important limitations", "",
