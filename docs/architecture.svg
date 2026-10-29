@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Azure FinOps and Cost Governance Platform Architecture</title>
+  <desc id="desc">A premium dark navy architecture diagram showing Azure cost data flowing through a Python analyzer to reports and FinOps review, with Terraform governance guardrails and GitHub Actions quality gates.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071426"/><stop offset="100%" stop-color="#102b4c"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0879d9"/><stop offset="100%" stop-color="#2aa8ff"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6545c5"/><stop offset="100%" stop-color="#9a75ff"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#007e78"/><stop offset="100%" stop-color="#26c6a6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="9" stdDeviation="12" flood-color="#000814" flood-opacity=".38"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8fcaff"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#62e6c7"/></marker>
+    <style>
+      .title{font:700 34px 'Segoe UI',Arial,sans-serif;fill:#fff}.sub{font:400 16px 'Segoe UI',Arial,sans-serif;fill:#b7cbe2}
+      .section{font:700 15px 'Segoe UI',Arial,sans-serif;letter-spacing:1.8px;fill:#9bc8f3}
+      .nodeTitle{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#fff}.nodeText{font:400 13px 'Segoe UI',Arial,sans-serif;fill:#d7e7f7}
+      .small{font:600 12px 'Segoe UI',Arial,sans-serif;fill:#b4cbe4;letter-spacing:.5px}
+      .edge{fill:none;stroke:#8fcaff;stroke-width:2.5;marker-end:url(#arrow)}
+      .edgeGreen{fill:none;stroke:#62e6c7;stroke-width:2.5;marker-end:url(#arrowGreen)}
+      .pill{font:700 12px 'Segoe UI',Arial,sans-serif;fill:#e9f4ff}
+    </style>
+  </defs>
+  <rect width="1440" height="900" rx="26" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#64b9ff" stroke-width="1"><path d="M0 120H1440M0 220H1440M0 320H1440M0 420H1440M0 520H1440M0 620H1440M0 720H1440M0 820H1440"/><path d="M120 0V900M240 0V900M360 0V900M480 0V900M600 0V900M720 0V900M840 0V900M960 0V900M1080 0V900M1200 0V900M1320 0V900"/></g>
+  <text x="64" y="70" class="title">AZURE FINOPS</text>
+  <text x="64" y="108" class="title" style="font-size:27px">Cost Governance &amp; Optimization Platform</text>
+  <text x="64" y="140" class="sub">Visibility · Accountability · Budget Guardrails · Reviewable Automation</text>
+  <rect x="1130" y="54" width="244" height="42" rx="21" fill="#183d5f" stroke="#428fcb"/>
+  <circle cx="1152" cy="75" r="5" fill="#62e6c7"/><text x="1167" y="80" class="pill">REFERENCE ARCHITECTURE</text>
+
+  <text x="64" y="202" class="section">01 / COST DATA PIPELINE</text>
+  <g filter="url(#shadow)">
+    <rect x="64" y="230" width="248" height="150" rx="18" fill="#15395d" stroke="#3187c4" stroke-width="1.4"/>
+    <rect x="64" y="230" width="248" height="8" rx="4" fill="url(#blue)"/>
+    <circle cx="98" cy="271" r="16" fill="#0879d9"/><path d="M88 271 Q98 255 108 271 Q98 287 88 271M88 271H108" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <text x="124" y="274" class="nodeTitle">Azure Cost Data</text>
+    <text x="86" y="311" class="nodeText">Cost Management export</text><text x="86" y="332" class="nodeText">Subscription / billing scope</text>
+    <rect x="86" y="347" width="146" height="22" rx="11" fill="#214f76"/><text x="99" y="362" class="small">SOURCE CONCEPT</text>
+  </g>
+  <path d="M312 305H354" class="edge"/>
+  <g filter="url(#shadow)">
+    <rect x="360" y="230" width="248" height="150" rx="18" fill="#183653" stroke="#418fca" stroke-width="1.4"/>
+    <rect x="360" y="230" width="248" height="8" rx="4" fill="url(#blue)"/>
+    <circle cx="394" cy="271" r="16" fill="#0879d9"/><path d="M387 263H401V279H387Z M390 259H404V275" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <text x="420" y="274" class="nodeTitle">Normalized Dataset</text>
+    <text x="382" y="311" class="nodeText">Date · Service · Subscription</text><text x="382" y="332" class="nodeText">Owner · Cost · Currency</text>
+    <rect x="382" y="347" width="150" height="22" rx="11" fill="#214f76"/><text x="396" y="362" class="small">SANITIZE FIRST</text>
+  </g>
+  <path d="M608 305H650" class="edge"/>
+  <g filter="url(#shadow)">
+    <rect x="656" y="230" width="248" height="150" rx="18" fill="#302a62" stroke="#8c79f1" stroke-width="1.4"/>
+    <rect x="656" y="230" width="248" height="8" rx="4" fill="url(#purple)"/>
+    <circle cx="690" cy="271" r="16" fill="#7856d8"/><path d="M684 279L690 262L696 279M686 274H694" fill="none" stroke="#fff" stroke-width="1.7"/>
+    <text x="716" y="274" class="nodeTitle">Python Analyzer</text>
+    <text x="678" y="311" class="nodeText">Aggregate and validate cost</text><text x="678" y="332" class="nodeText">Budget threshold evaluation</text>
+    <rect x="678" y="347" width="112" height="22" rx="11" fill="#4b3c85"/><text x="691" y="362" class="small">OFFLINE DEMO</text>
+  </g>
+  <path d="M904 305H946" class="edge"/>
+  <g filter="url(#shadow)">
+    <rect x="952" y="230" width="196" height="150" rx="18" fill="#15395d" stroke="#3187c4" stroke-width="1.4"/>
+    <rect x="952" y="230" width="196" height="8" rx="4" fill="url(#blue)"/>
+    <circle cx="986" cy="271" r="16" fill="#0879d9"/><path d="M979 263H993V279H979Z M982 267H990M982 271H990M982 275H988" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <text x="1012" y="274" class="nodeTitle">Reports</text>
+    <text x="974" y="311" class="nodeText">Readable Markdown</text><text x="974" y="332" class="nodeText">Machine-readable JSON</text>
+    <rect x="974" y="347" width="126" height="22" rx="11" fill="#214f76"/><text x="987" y="362" class="small">AUDITABLE</text>
+  </g>
+  <path d="M1148 305H1180V427H1110" class="edgeGreen"/>
+  <g filter="url(#shadow)">
+    <rect x="866" y="424" width="282" height="108" rx="18" fill="#0f504d" stroke="#37c7ad" stroke-width="1.4"/>
+    <text x="890" y="458" class="nodeTitle">FinOps Review</text>
+    <text x="890" y="482" class="nodeText">Finance + engineering + service owner</text>
+    <text x="890" y="505" class="nodeText">Approve actions; validate real savings</text>
+  </g>
+  <path d="M866 477H810V403H780V380" class="edgeGreen" opacity=".7" stroke-dasharray="6 6"/>
+  <text x="64" y="463" class="section">02 / GOVERNANCE &amp; DELIVERY CONTROLS</text>
+
+  <g filter="url(#shadow)">
+    <rect x="64" y="492" width="338" height="166" rx="18" fill="#173755" stroke="#4c99d0" stroke-width="1.4"/>
+    <rect x="64" y="492" width="338" height="8" rx="4" fill="url(#blue)"/>
+    <circle cx="100" cy="535" r="17" fill="#0879d9"/><path d="M92 529H108V543H92Z M96 525H104V529" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <text x="128" y="540" class="nodeTitle">Terraform Baseline</text>
+    <text x="88" y="578" class="nodeText">Azure budget / governance resources</text>
+    <text x="88" y="600" class="nodeText">Explicit scope · tags · variables</text>
+    <text x="88" y="631" class="small">PLAN + REVIEW BEFORE APPLY</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="452" y="492" width="338" height="166" rx="18" fill="#15395d" stroke="#3187c4" stroke-width="1.4"/>
+    <rect x="452" y="492" width="338" height="8" rx="4" fill="url(#blue)"/>
+    <circle cx="488" cy="535" r="17" fill="#0879d9"/><path d="M480 531L488 526L496 531V540L488 545L480 540Z M484 535L487 538L493 532" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <text x="516" y="540" class="nodeTitle">GitHub Actions CI</text>
+    <text x="476" y="578" class="nodeText">Python unit tests · Terraform validate</text>
+    <text x="476" y="600" class="nodeText">Formatting · IaC security scan</text>
+    <text x="476" y="631" class="small">NO AZURE DEPLOYMENT CREDENTIALS</text>
+  </g>
+  <path d="M402 575H446" class="edge"/>
+  <path d="M621 492V445H525V380" class="edge" opacity=".75"/>
+  <g filter="url(#shadow)">
+    <rect x="840" y="582" width="308" height="94" rx="18" fill="#133f43" stroke="#2bb99f" stroke-width="1.4"/>
+    <text x="864" y="616" class="nodeTitle">Optimization Backlog</text>
+    <text x="864" y="640" class="nodeText">Rightsize · schedules · storage tiers</text>
+    <text x="864" y="659" class="nodeText">Owner approval before any change</text>
+  </g>
+  <path d="M1007 532V576" class="edgeGreen"/>
+  <path d="M840 629H810V698H233V664" class="edgeGreen" opacity=".7" stroke-dasharray="6 6"/>
+
+  <rect x="64" y="728" width="1084" height="92" rx="18" fill="#0b2038" stroke="#294b6b"/>
+  <text x="88" y="760" class="section">SECURITY &amp; TRUST BOUNDARIES</text>
+  <text x="88" y="790" class="nodeText">Least privilege</text><text x="260" y="790" class="nodeText">Sanitized data</text><text x="420" y="790" class="nodeText">No committed secrets</text><text x="635" y="790" class="nodeText">No auto-remediation</text><text x="862" y="790" class="nodeText">Reviewed Terraform plans</text>
+  <text x="64" y="864" class="sub">REFERENCE / LAB DESIGN  •  Synthetic demo data  •  Live Azure integration is an explicit extension point</text>
+  <text x="1370" y="864" text-anchor="end" class="small">v1.0</text>
+</svg>
