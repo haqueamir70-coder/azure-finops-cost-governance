@@ -18,7 +18,7 @@
 
 **An enterprise-style reference implementation for cloud financial management (FinOps), cost visibility, budget guardrails, and optimization workflows on Microsoft Azure.**
 
-[Architecture](docs/architecture.md) · [Quick Start](#-quick-start) · [Demo Report](reports/sample-cost-report.md) · [Security](#-security--safe-usage)
+[Architecture](docs/architecture.md) · [Editable draw.io](docs/azure-finops.drawio) · [Senior Interview Q&A](interview-prep/README.md) · [Quick Start](#-quick-start) · [Demo Report](reports/sample-cost-report.md)
 
 </div>
 
@@ -36,7 +36,11 @@ Cloud costs become difficult to govern when teams cannot consistently answer fou
 
 *The diagram separates Azure cost-data sources and governance controls from the analytics/reporting pipeline. The included Python analyzer works offline against a sample export; a live Cost Management API integration is an extension point, not something silently assumed to be configured.*
 
-**Architecture source:** [Open the SVG diagram](docs/architecture.svg) · [Architecture notes](docs/architecture.md)
+**Architecture source:** [Open SVG diagram](docs/architecture.svg) · [Edit in diagrams.net](https://app.diagrams.net/) using [docs/azure-finops.drawio](docs/azure-finops.drawio) · [Architecture notes](docs/architecture.md)
+
+## Senior interview preparation
+
+Added a dedicated [interview-prep folder](interview-prep/README.md) with easy-to-speak answers and 24+ practical scenarios for senior Azure/DevOps engineers: cost spikes, budgets, AKS, Log Analytics, commitments, tagging, Terraform risk, governance rollout, and 30/60/90-day planning.
 
 ## What this project demonstrates
 
