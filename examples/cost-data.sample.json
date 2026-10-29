@@ -1,0 +1,11 @@
+{
+  "currency": "USD",
+  "records": [
+    {"date": "2026-10-01", "subscription": "sub-platform-demo", "service": "Virtual Machines", "owner": "platform-team", "cost": 410.25},
+    {"date": "2026-10-02", "subscription": "sub-platform-demo", "service": "Storage", "owner": "platform-team", "cost": 95.50},
+    {"date": "2026-10-02", "subscription": "sub-app-demo", "service": "App Service", "owner": "payments-team", "cost": 245.70},
+    {"date": "2026-10-03", "subscription": "sub-app-demo", "service": "Azure SQL", "owner": "payments-team", "cost": 180.30},
+    {"date": "2026-10-04", "subscription": "sub-data-demo", "service": "Virtual Machines", "owner": "data-team", "cost": 155.00},
+    {"date": "2026-10-04", "subscription": "sub-data-demo", "service": "Networking", "owner": "data-team", "cost": 48.25}
+  ]
+}
