@@ -46,14 +46,3 @@ variable "threshold_percentages" {
     error_message = "Each budget threshold must be between 1 and 100."
   }
 }
-
-variable "tags" {
-  description = "Governance tags applied to supported resources."
-  type        = map(string)
-  default = {
-    managed_by  = "terraform"
-    cost_center = "platform"
-    environment = "lab"
-    owner       = "cloud-platform"
-  }
-}
